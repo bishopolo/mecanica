@@ -200,14 +200,15 @@ function mostrarExperimentos() {
     return;
   }
 
+  const cardsExistentes = wrapperExperiments.querySelectorAll(".card");
+  cardsExistentes.forEach((card) => card.remove());
+
   if (experimentos.length === 0) {
     message.innerHTML = "No hay experimentos guardados. 😕😕😕";
     return;
   } else {
     message.innerHTML = "";
   }
-
-  wrapperExperiments.innerHTML = "";
   experimentos.forEach((experimento, index) => {
     const card = document.createElement("div");
     card.className = "card";
