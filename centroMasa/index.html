@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="author" content="bishopolo" />
+    <title>Centro de masa</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="blur-container">
+      <div class="circle circle1"></div>
+      <div class="circle circle2"></div>
+      <div class="circle circle3"></div>
+      <div class="circle circle4"></div>
+      <div class="circle circle5"></div>
+      <div class="circle circle6"></div>
+    </div>
+
+    <div class="container">
+      <header>
+        <h1 class="title">Centro de Masa ⚖️</h1>
+      </header>
+      <section class="createSection">
+        <button class="btn" id="btn">Crear nuevo experimento</button>
+      </section>
+
+      <section class="experiments" id="experiments">
+        <h2 class="subtitleExperiments">Experimentos Guardados</h2>
+        <article id="wrapperExperiments" class="wrapperExperiments">
+          <p class="message" id="message"></p>
+          <!-- <div class="card">
+            <figure class="figureCard">
+              <img class="imgCard" alt="" src="" />
+            </figure>
+            <div class="contentCard">
+              <h3 class="titleCard">Título del experimento</h3>
+              <p class="descriptionCard">Descripción del experimento</p>
+              <p class="dateCard">Fecha del experimento</p>
+            </div>
+            <div class="images">
+              <figure class="imagesCard">
+                <img class="imgCardSmall" alt="" src="" />
+                <img class="imgCardSmall" alt="" src="" />
+                <img class="imgCardSmall" alt="" src="" />
+                <img class="imgCardSmall" alt="" src="" />
+              </figure>
+            </div>
+          </div> -->
+        </article>
+      </section>
+    </div>
+
+    <dialog id="formModal">
+      <form method="dialog">
+        <h2 class="subtitle">Nuevo experimento</h2>
+
+        <div class="inputField">
+          <label for="titleExperiment" class="titleExperiment">Título:</label>
+          <input
+            type="text"
+            id="titleExperiment"
+            required
+            placeholder="Ejemplo... Pera de cartón"
+          />
+        </div>
+
+        <div class="inputField">
+          <label for="descriptionExperiment" class="descriptionExperiment"
+            >Descripción:</label
+          >
+          <textarea
+            id="descriptionExperiment"
+            placeholder="Información adicional"
+            maxlength="100"
+          ></textarea>
+        </div>
+
+        <div class="inputField">
+          <p class="infoText">Sube imágenes del experimento</p>
+          <p class="smallText">máximo 5</p>
+          <!-- <label for="imageExperiment" class="imageExperiment">
+            📸 subir imágen
+
+            <input
+              type="file"
+              id="imageExperiment"
+              accept="image/*"
+              style="display: none"
+            />
+          </label> -->
+        </div>
+
+        <section class="preview">
+          <div class="wrapperPreview">
+            <article class="cardPreview">
+              <label for="imgPrev1" id="label">
+                <span> 1 </span>
+                <input
+                  type="file"
+                  id="imgPrev1"
+                  accept="image/*"
+                  style="display: none"
+                  class="inputFile"
+                />
+              </label>
+              <figure class="figurePreview hidden" id="figure1">
+                <img src="" alt="" class="imgPreview" id="img1" />
+              </figure>
+              <button class="btnPreview" type="button">
+                <span class="closePreview"> &#x2716;</span>
+              </button>
+            </article>
+
+            <article class="cardPreview">
+              <label for="imgPrev2">
+                2
+                <input
+                  type="file"
+                  id="imgPrev2"
+                  accept="image/*"
+                  style="display: none"
+                  class="inputFile"
+                />
+              </label>
+              <figure class="figurePreview hidden" id="figure2">
+                <img src="" alt="" class="imgPreview" id="img2" />
+              </figure>
+              <button class="btnPreview" type="button">
+                <span class="closePreview"> &#x2716;</span>
+              </button>
+            </article>
+            <article class="cardPreview">
+              <label for="imgPrev3">
+                3
+                <input
+                  type="file"
+                  id="imgPrev3"
+                  accept="image/*"
+                  style="display: none"
+                  class="inputFile"
+                />
+              </label>
+              <figure class="figurePreview hidden" id="figure3">
+                <img src="" alt="" class="imgPreview" id="img3" />
+              </figure>
+              <button class="btnPreview" type="button">
+                <span class="closePreview"> &#x2716;</span>
+              </button>
+            </article>
+            <article class="cardPreview">
+              <label for="imgPrev4">
+                4
+                <input
+                  type="file"
+                  id="imgPrev4"
+                  accept="image/*"
+                  style="display: none"
+                  class="inputFile"
+                />
+              </label>
+              <figure class="figurePreview hidden" id="figure4">
+                <img src="" alt="" class="imgPreview" id="img4" />
+              </figure>
+              <button class="btnPreview" type="button">
+                <span class="closePreview"> &#x2716;</span>
+              </button>
+            </article>
+            <article class="cardPreview">
+              <label for="imgPrev5">
+                5
+                <input
+                  type="file"
+                  id="imgPrev5"
+                  accept="image/*"
+                  style="display: none"
+                  class="inputFile"
+                />
+              </label>
+              <figure class="figurePreview hidden" id="figure5">
+                <img src="" alt="" class="imgPreview" id="img5" />
+              </figure>
+              <button class="btnPreview" type="button">
+                <span class="closePreview"> &#x2716;</span>
+              </button>
+            </article>
+          </div>
+        </section>
+
+        <div class="modal-buttons">
+          <button type="button" value="cancel" class="btn btnCancel">
+            <span class="icon"> &#x2716; </span>
+            <span class="txt">Cancelar</span>
+          </button>
+          <button type="submit" value="confirm" class="btn btnConfirm">
+            <span class="icon"> &#x2714; </span>
+            <span class="txt">Guardar</span>
+          </button>
+        </div>
+      </form>
+    </dialog>
+
+    <div class="viewer">
+      <img class="imgView" alt="" src="" />
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
